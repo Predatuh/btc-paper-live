@@ -1,0 +1,156 @@
+{
+  "bankroll": 96.630531,
+  "starting_bankroll": 100.0,
+  "peak": 100.0,
+  "max_dd": 0.10321850999999996,
+  "open_position": null,
+  "trades": [
+    {
+      "closed_at": "2026-09-28T06:00:21+00:00",
+      "slug": "btc-updown-5m-1790574900",
+      "kind": "directional",
+      "side": "DOWN",
+      "winner": "UP",
+      "open_spot": 83100.41,
+      "close_spot": 83155.4,
+      "entry_ask": 0.44,
+      "cost": 4.0,
+      "payout": 0.0,
+      "pnl": -4.0,
+      "bankroll": 96.0,
+      "p_model": 0.5361,
+      "reason": "window_expired_coinbase"
+    },
+    {
+      "closed_at": "2026-09-28T06:05:07+00:00",
+      "slug": "btc-updown-5m-1790575200",
+      "kind": "directional",
+      "side": "UP",
+      "winner": "DOWN",
+      "open_spot": 83155.4,
+      "close_spot": 83131.65,
+      "entry_ask": 0.42,
+      "cost": 3.133005,
+      "payout": 0.0,
+      "pnl": -3.133005,
+      "bankroll": 92.866995,
+      "p_model": 0.5,
+      "reason": "window_expired_coinbase"
+    },
+    {
+      "closed_at": "2026-09-28T12:20:13+00:00",
+      "slug": "btc-updown-5m-1790597700",
+      "kind": "directional",
+      "side": "DOWN",
+      "winner": "UP",
+      "open_spot": 83355.26,
+      "close_spot": 83419.9,
+      "entry_ask": 0.47,
+      "cost": 3.188846,
+      "payout": 0.0,
+      "pnl": -3.188846,
+      "bankroll": 89.678149,
+      "p_model": 0.5471,
+      "reason": "window_expired_coinbase"
+    },
+    {
+      "closed_at": "2026-09-28T12:30:04+00:00",
+      "slug": "btc-updown-5m-1790598000",
+      "kind": "directional",
+      "side": "DOWN",
+      "winner": "DOWN",
+      "open_spot": 83396.97,
+      "close_spot": 83346.49,
+      "entry_ask": 0.44,
+      "cost": 3.587126,
+      "payout": 7.989508,
+      "pnl": 4.402382,
+      "bankroll": 94.080531,
+      "p_model": 0.5395,
+      "reason": "window_expired_coinbase"
+    },
+    {
+      "closed_at": "2026-09-28T14:17:11+00:00",
+      "slug": "btc-updown-5m-1790601600",
+      "kind": "directional",
+      "side": "DOWN",
+      "winner": "DOWN",
+      "open_spot": 83371.02,
+      "close_spot": 83352.62,
+      "entry_ask": 0.47,
+      "cost": 2.35,
+      "payout": 4.9,
+      "pnl": 2.55,
+      "bankroll": 96.630531,
+      "p_model": 0.5206,
+      "reason": "window_expired_coinbase"
+    }
+  ],
+  "skips": [
+    {
+      "t": "2026-09-28T12:12:42+00:00",
+      "slug": "btc-updown-5m-1790597400",
+      "reason": "too_late_162s"
+    },
+    {
+      "t": "2026-09-28T12:13:03+00:00",
+      "slug": "btc-updown-5m-1790597400",
+      "reason": "too_late_183s"
+    },
+    {
+      "t": "2026-09-28T12:13:25+00:00",
+      "slug": "btc-updown-5m-1790597400",
+      "reason": "no_ask"
+    },
+    {
+      "t": "2026-09-28T12:20:13+00:00",
+      "slug": "btc-updown-5m-1790598000",
+      "reason": "ask_out_of_band_0.69"
+    },
+    {
+      "t": "2026-09-28T12:20:35+00:00",
+      "slug": "btc-updown-5m-1790598000",
+      "reason": "ask_out_of_band_0.72"
+    },
+    {
+      "t": "2026-09-28T12:20:56+00:00",
+      "slug": "btc-updown-5m-1790598000",
+      "reason": "ask_out_of_band_0.80"
+    },
+    {
+      "t": "2026-09-28T12:30:04+00:00",
+      "slug": "btc-updown-5m-1790598600",
+      "reason": "too_early"
+    },
+    {
+      "t": "2026-09-28T14:17:11+00:00",
+      "slug": "btc-updown-5m-1790604900",
+      "reason": "too_late_131s"
+    },
+    {
+      "t": "2026-09-28T15:01:41+00:00",
+      "slug": "btc-updown-5m-1790607600",
+      "reason": "too_late_101s"
+    },
+    {
+      "t": "2026-09-28T15:13:06+00:00",
+      "slug": "btc-updown-5m-1790608200",
+      "reason": "too_late_186s"
+    },
+    {
+      "t": "2026-09-28T16:12:59+00:00",
+      "slug": "btc-updown-5m-1790611800",
+      "reason": "too_late_179s"
+    },
+    {
+      "t": "2026-09-28T17:12:38+00:00",
+      "slug": "btc-updown-5m-1790615400",
+      "reason": "no_ask"
+    }
+  ],
+  "ticks": 112,
+  "started_at": "2026-09-28T05:48:41+00:00",
+  "updated_at": "2026-09-28T17:12:38+00:00",
+  "strategy": "v2",
+  "notes": "Paper only. v2: candle-open only, p>=0.58, 8bp move, no cheap coin-flips."
+}
