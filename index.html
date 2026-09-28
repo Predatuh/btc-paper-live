@@ -146,22 +146,40 @@
       document.getElementById("remain").textContent = Math.max(start + 300 - Math.floor(Date.now()/1000), 0) + "s";
       const ticker = await j("https://api.exchange.coinbase.com/products/BTC-USD/ticker");
       document.getElementById("spot").textContent = Number(ticker.price).toLocaleString(undefined, {maximumFractionDigits: 2});
-      const mkts = await j("https://gamma-api.polymarket.com/markets?slug=btc-updown-5m-" + start);
-      const m = Array.isArray(mkts) ? mkts[0] : mkts;
-      if (!m) return;
-      let ids = m.clobTokenIds;
-      if (typeof ids === "string") ids = JSON.parse(ids);
-      const [up, down] = await Promise.all([
-        j("https://clob.polymarket.com/book?token_id=" + ids[0]),
-        j("https://clob.polymarket.com/book?token_id=" + ids[1])
-      ]);
-      const ask = book => {
-        const xs = (book.asks || []).map(x => Number(x.price ?? x[0]));
-        return xs.length ? Math.min(...xs) : null;
-      };
-      const ua = ask(up), da = ask(down);
-      document.getElementById("upAsk").textContent = ua == null ? "—" : ua.toFixed(2);
-      document.getElementById("downAsk").textContent = da == null ? "—" : da.toFixed(2);
+      let up = null, down = null;
+      try {
+        const mkts = await j("https://gamma-api.polymarket.com/markets?slug=btc-updown-5m-" + start);
+        const m = Array.isArray(mkts) ? mkts[0] : mkts;
+        let prices = m && m.outcomePrices;
+        if (typeof prices === "string") prices = JSON.parse(prices);
+        if (prices && prices.length >= 2) {
+          up = Number(prices[0]);
+          down = Number(prices[1]);
+        }
+        let ids = m && m.clobTokenIds;
+        if (typeof ids === "string") ids = JSON.parse(ids);
+        if (ids && ids.length >= 2) {
+          const books = await Promise.allSettled([
+            j("https://clob.polymarket.com/book?token_id=" + ids[0]),
+            j("https://clob.polymarket.com/book?token_id=" + ids[1])
+          ]);
+          const bestAsk = book => {
+            const xs = ((book && book.asks) || []).map(x => Number(x.price ?? x[0])).filter(n => n > 0);
+            return xs.length ? Math.min(...xs) : null;
+          };
+          if (books[0].status === "fulfilled") up = bestAsk(books[0].value) ?? up;
+          if (books[1].status === "fulfilled") down = bestAsk(books[1].value) ?? down;
+        }
+      } catch (e) {}
+      if (up == null || down == null) {
+        try {
+          const q = await j(BASE + "live_quote.json");
+          if (up == null && q.up_ask != null) up = Number(q.up_ask);
+          if (down == null && q.down_ask != null) down = Number(q.down_ask);
+        } catch (e) {}
+      }
+      document.getElementById("upAsk").textContent = (up == null || Number.isNaN(up)) ? "—" : Number(up).toFixed(2);
+      document.getElementById("downAsk").textContent = (down == null || Number.isNaN(down)) ? "—" : Number(down).toFixed(2);
       document.getElementById("live").style.color = "#3ddc8e";
     }
     async function tick() {
