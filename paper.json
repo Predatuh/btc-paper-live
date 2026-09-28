@@ -88,11 +88,6 @@
   ],
   "skips": [
     {
-      "t": "2026-09-28T12:13:03+00:00",
-      "slug": "btc-updown-5m-1790597400",
-      "reason": "too_late_183s"
-    },
-    {
       "t": "2026-09-28T12:13:25+00:00",
       "slug": "btc-updown-5m-1790597400",
       "reason": "no_ask"
@@ -146,11 +141,16 @@
       "t": "2026-09-28T18:12:39+00:00",
       "slug": "btc-updown-5m-1790619000",
       "reason": "too_late_158s"
+    },
+    {
+      "t": "2026-09-28T19:13:17+00:00",
+      "slug": "btc-updown-5m-1790622600",
+      "reason": "too_late_196s"
     }
   ],
-  "ticks": 113,
+  "ticks": 114,
   "started_at": "2026-09-28T05:48:41+00:00",
-  "updated_at": "2026-09-28T18:12:39+00:00",
+  "updated_at": "2026-09-28T19:13:17+00:00",
   "strategy": "v2",
   "notes": "Paper only. v2: candle-open only, p>=0.58, 8bp move, no cheap coin-flips."
 }
