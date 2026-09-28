@@ -1,5 +1,5 @@
 {
-  "bankroll": 96.630531,
+  "bankroll": 96.959486,
   "starting_bankroll": 100.0,
   "peak": 100.0,
   "max_dd": 0.10321850999999996,
@@ -84,73 +84,89 @@
       "bankroll": 96.630531,
       "p_model": 0.5206,
       "reason": "window_expired_coinbase"
+    },
+    {
+      "closed_at": "2026-09-28T22:12:03+00:00",
+      "slug": "btc-updown-5m-1790633100",
+      "kind": "merge",
+      "side": "BOTH",
+      "winner": "UP",
+      "open_spot": 83149.47,
+      "close_spot": 83165.45,
+      "entry_ask": 0.94,
+      "cost": 7.730442,
+      "payout": 8.059397,
+      "pnl": 0.328955,
+      "bankroll": 96.959486,
+      "p_model": 1.0,
+      "reason": "window_expired_coinbase"
     }
   ],
   "skips": [
     {
-      "t": "2026-09-28T21:01:02+00:00",
-      "slug": "btc-updown-5m-1790629200",
-      "reason": "ask_out_of_band_0.84"
+      "t": "2026-09-28T22:12:03+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_123s"
     },
     {
-      "t": "2026-09-28T21:01:15+00:00",
-      "slug": "btc-updown-5m-1790629200",
-      "reason": "ask_out_of_band_0.91"
+      "t": "2026-09-28T22:12:18+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_138s"
     },
     {
-      "t": "2026-09-28T21:01:28+00:00",
-      "slug": "btc-updown-5m-1790629200",
-      "reason": "ask_out_of_band_0.93"
+      "t": "2026-09-28T22:12:33+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_153s"
     },
     {
-      "t": "2026-09-28T21:01:41+00:00",
-      "slug": "btc-updown-5m-1790629200",
-      "reason": "ask_out_of_band_0.97"
+      "t": "2026-09-28T22:12:48+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_168s"
     },
     {
-      "t": "2026-09-28T21:14:13+00:00",
-      "slug": "btc-updown-5m-1790629800",
+      "t": "2026-09-28T22:13:03+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_182s"
+    },
+    {
+      "t": "2026-09-28T22:13:18+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_197s"
+    },
+    {
+      "t": "2026-09-28T22:13:33+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_213s"
+    },
+    {
+      "t": "2026-09-28T22:13:42+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_222s"
+    },
+    {
+      "t": "2026-09-28T22:13:57+00:00",
+      "slug": "btc-updown-5m-1790633400",
+      "reason": "too_late_237s"
+    },
+    {
+      "t": "2026-09-28T22:14:12+00:00",
+      "slug": "btc-updown-5m-1790633400",
       "reason": "no_ask"
     },
     {
-      "t": "2026-09-28T21:15:11+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "thin_move_-0.0bp"
+      "t": "2026-09-28T22:15:03+00:00",
+      "slug": "btc-updown-5m-1790633700",
+      "reason": "too_early"
     },
     {
-      "t": "2026-09-28T21:15:25+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "thin_move_+1.4bp"
-    },
-    {
-      "t": "2026-09-28T21:15:54+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "thin_move_-1.0bp"
-    },
-    {
-      "t": "2026-09-28T21:16:09+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "thin_move_-1.5bp"
-    },
-    {
-      "t": "2026-09-28T21:16:23+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "thin_move_-0.4bp"
-    },
-    {
-      "t": "2026-09-28T21:16:38+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "thin_move_-1.5bp"
-    },
-    {
-      "t": "2026-09-28T21:16:52+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "thin_move_-2.1bp"
+      "t": "2026-09-28T22:15:33+00:00",
+      "slug": "btc-updown-5m-1790633700",
+      "reason": "no_candle_open"
     }
   ],
-  "ticks": 249,
+  "ticks": 368,
   "started_at": "2026-09-28T05:48:41+00:00",
-  "updated_at": "2026-09-28T21:16:52+00:00",
-  "strategy": "v2.1",
-  "notes": "Paper only. v2.1: candle open, p>=0.58, 8bp move, first 120s, 15s loop."
+  "updated_at": "2026-09-28T22:16:04+00:00",
+  "strategy": "conservative",
+  "notes": "v3 tight: wait 20s, p>=0.62, 12bp, z>=1.0, no first-tick noise."
 }
