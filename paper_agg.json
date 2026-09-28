@@ -1,0 +1,20 @@
+{
+  "bankroll": 100.0,
+  "starting_bankroll": 100.0,
+  "peak": 100.0,
+  "max_dd": 0.0,
+  "open_position": null,
+  "trades": [],
+  "skips": [
+    {
+      "t": "2026-09-28T20:19:24+00:00",
+      "slug": "btc-updown-5m-1790626500",
+      "reason": "no_ask"
+    }
+  ],
+  "ticks": 1,
+  "started_at": "2026-09-28T20:19:23+00:00",
+  "updated_at": "2026-09-28T20:19:24+00:00",
+  "strategy": "aggressive",
+  "notes": "Wider: p>=0.54, 5bp, first 160s, 34-66c, first-tick open ok."
+}

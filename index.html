@@ -63,8 +63,18 @@
       No real orders.
     </div>
     <div class="grid">
-      <div class="card"><div class="k">Paper bankroll</div><div class="v" id="bankroll">—</div><div class="s" id="pnl">starting $100</div></div>
-      <div class="card"><div class="k">Win / trades</div><div class="v" id="record">—</div><div class="s" id="dd">drawdown</div></div>
+      <div class="card half">
+        <div class="k">Conservative</div>
+        <div class="v" id="cBank">—</div>
+        <div class="s" id="cMeta">p≥0.58 · 8bp · 40–58¢</div>
+        <div class="s" id="cOpen">Flat</div>
+      </div>
+      <div class="card half">
+        <div class="k">Aggressive</div>
+        <div class="v" id="aBank">—</div>
+        <div class="s" id="aMeta">p≥0.54 · 5bp · 34–66¢</div>
+        <div class="s" id="aOpen">Flat</div>
+      </div>
       <div class="card"><div class="k">BTC spot</div><div class="v" id="spot">—</div><div class="s" id="move">vs window open</div></div>
       <div class="card"><div class="k">Window</div><div class="v" id="remain">—</div><div class="s" id="slug">—</div></div>
       <div class="card half">
@@ -75,25 +85,22 @@
         </div>
       </div>
       <div class="card half">
-        <div class="k">Open paper position</div>
-        <div class="v" id="openSide">Flat</div>
-        <div class="s" id="openDetail">No position</div>
+        <div class="k">Last skips</div>
+        <div class="s" id="skips" style="margin-top:8px;line-height:1.7">—</div>
       </div>
       <div class="card wide">
         <div class="k">Closed paper trades</div>
         <table>
-          <thead><tr><th>Closed</th><th>Side</th><th>Ask</th><th>p</th><th>Winner</th><th>PnL</th><th>Bankroll</th></tr></thead>
+          <thead><tr><th>Desk</th><th>Closed</th><th>Side</th><th>Ask</th><th>p</th><th>Winner</th><th>PnL</th><th>Bankroll</th></tr></thead>
           <tbody id="trades"></tbody>
         </table>
-      </div>
-      <div class="card wide">
-        <div class="k">Recent skips</div>
-        <div class="s" id="skips" style="margin-top:8px;line-height:1.7">—</div>
       </div>
     </div>
   </div>
   <script>
+    const DESKS_URL = "https://raw.githubusercontent.com/Predatuh/btc-paper-live/master/desks.json?t=";
     const PAPER_URL = "https://raw.githubusercontent.com/Predatuh/btc-paper-live/master/paper.json?t=";
+    const AGG_URL = "https://raw.githubusercontent.com/Predatuh/btc-paper-live/master/paper_agg.json?t=";
     function money(n) { return "$" + Number(n).toFixed(2); }
     function cls(n) { return n >= 0 ? "pos" : "neg"; }
     function windowStart() { return Math.floor(Date.now() / 1000 / 300) * 300; }
@@ -104,30 +111,36 @@
       return r.json();
     }
 
-    async function refreshPaper() {
-      const s = await j(PAPER_URL + Date.now());
+    function fillDesk(prefix, s, label) {
+      if (!s) return;
       const start = s.starting_bankroll || 100;
       const br = s.bankroll;
       const pnl = br - start;
-      document.getElementById("bankroll").textContent = money(br);
-      document.getElementById("pnl").innerHTML = `<span class="${cls(pnl)}">${pnl >= 0 ? "+" : ""}${pnl.toFixed(2)} (${((br/start-1)*100).toFixed(2)}%)</span> · ${s.strategy || "v2"} · updated ${s.updated_at || ""}`;
       const trades = s.trades || [];
       const wins = trades.filter(t => t.pnl > 0).length;
-      document.getElementById("record").textContent = wins + " / " + trades.length;
-      document.getElementById("dd").textContent = "max DD " + ((s.max_dd || 0) * 100).toFixed(2) + "%";
+      document.getElementById(prefix + "Bank").innerHTML = money(br);
+      document.getElementById(prefix + "Meta").innerHTML = `<span class="${cls(pnl)}">${pnl>=0?"+":""}${pnl.toFixed(2)} (${((br/start-1)*100).toFixed(2)}%)</span> · ${wins}/${trades.length} wins · DD ${((s.max_dd||0)*100).toFixed(1)}%`;
       const pos = s.open_position;
-      if (pos) {
-        document.getElementById("openSide").textContent = pos.side + " " + pos.kind;
-        document.getElementById("openDetail").textContent = "ask " + pos.entry_ask + " · cost " + money(pos.cost) + " · p " + pos.p_model;
-      } else {
-        document.getElementById("openSide").textContent = "Flat";
-        document.getElementById("openDetail").textContent = "No open paper position";
+      document.getElementById(prefix + "Open").textContent = pos ? (pos.side + " @ " + pos.entry_ask + " p=" + pos.p_model) : "Flat";
+      return (trades || []).map(t => ({...t, desk: label}));
+    }
+
+    async function refreshPaper() {
+      let board = {};
+      try { board = await j(DESKS_URL + Date.now()); } catch (e) {
+        try { board.conservative = await j(PAPER_URL + Date.now()); } catch (e2) {}
+        try { board.aggressive = await j(AGG_URL + Date.now()); } catch (e3) {}
       }
-      document.getElementById("trades").innerHTML = trades.slice().reverse().map(t =>
-        `<tr><td>${(t.closed_at||"").replace("T"," ").replace("+00:00","Z")}</td><td>${t.side}</td><td>${t.entry_ask}</td><td>${t.p_model ?? ""}</td><td>${t.winner}</td><td class="${cls(t.pnl)}">${t.pnl >= 0 ? "+" : ""}${Number(t.pnl).toFixed(2)}</td><td>${money(t.bankroll)}</td></tr>`
+      const ct = fillDesk("c", board.conservative || board, "C") || [];
+      const at = fillDesk("a", board.aggressive, "A") || [];
+      const trades = ct.concat(at).sort((x,y) => String(y.closed_at).localeCompare(String(x.closed_at)));
+      document.getElementById("trades").innerHTML = trades.map(t =>
+        `<tr><td>${t.desk}</td><td>${(t.closed_at||"").replace("T"," ").replace("+00:00","Z")}</td><td>${t.side}</td><td>${t.entry_ask}</td><td>${t.p_model ?? ""}</td><td>${t.winner}</td><td class="${cls(t.pnl)}">${t.pnl >= 0 ? "+" : ""}${Number(t.pnl).toFixed(2)}</td><td>${money(t.bankroll)}</td></tr>`
       ).join("");
-      const skips = (s.skips || []).slice(-8).reverse();
-      document.getElementById("skips").textContent = skips.length ? skips.map(x => x.t.replace("T"," ").replace("+00:00","Z") + "  " + x.reason).join("  ·  ") : "none";
+      const skips = []
+        .concat(((board.conservative||{}).skips||[]).map(x => "C " + x.reason))
+        .concat(((board.aggressive||{}).skips||[]).map(x => "A " + x.reason));
+      document.getElementById("skips").textContent = skips.slice(-8).reverse().join("  ·  ") || "none";
     }
 
     async function refreshLive() {
