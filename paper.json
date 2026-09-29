@@ -7,26 +7,6 @@
   "trades": [],
   "skips": [
     {
-      "t": "2026-09-29T12:15:12+00:00",
-      "slug": "btc-updown-5m-1790684100",
-      "reason": "too_early"
-    },
-    {
-      "t": "2026-09-29T12:15:26+00:00",
-      "slug": "btc-updown-5m-1790684100",
-      "reason": "early_noise_+3.9bp"
-    },
-    {
-      "t": "2026-09-29T12:15:42+00:00",
-      "slug": "btc-updown-5m-1790684100",
-      "reason": "early_noise_+7.1bp"
-    },
-    {
-      "t": "2026-09-29T12:15:58+00:00",
-      "slug": "btc-updown-5m-1790684100",
-      "reason": "thin_move_+2.7bp"
-    },
-    {
       "t": "2026-09-29T12:16:11+00:00",
       "slug": "btc-updown-5m-1790684100",
       "reason": "thin_move_+2.8bp"
@@ -45,11 +25,51 @@
       "t": "2026-09-29T12:16:57+00:00",
       "slug": "btc-updown-5m-1790684100",
       "reason": "too_late_114s"
+    },
+    {
+      "t": "2026-09-29T13:18:15+00:00",
+      "slug": "btc-updown-5m-1790687700",
+      "reason": "too_late_195s"
+    },
+    {
+      "t": "2026-09-29T13:18:27+00:00",
+      "slug": "btc-updown-5m-1790687700",
+      "reason": "too_late_207s"
+    },
+    {
+      "t": "2026-09-29T13:18:39+00:00",
+      "slug": "btc-updown-5m-1790687700",
+      "reason": "too_late_219s"
+    },
+    {
+      "t": "2026-09-29T13:18:51+00:00",
+      "slug": "btc-updown-5m-1790687700",
+      "reason": "too_late_231s"
+    },
+    {
+      "t": "2026-09-29T13:19:03+00:00",
+      "slug": "btc-updown-5m-1790687700",
+      "reason": "too_late_243s"
+    },
+    {
+      "t": "2026-09-29T13:19:15+00:00",
+      "slug": "btc-updown-5m-1790687700",
+      "reason": "too_late_255s"
+    },
+    {
+      "t": "2026-09-29T13:19:27+00:00",
+      "slug": "btc-updown-5m-1790687700",
+      "reason": "no_ask"
+    },
+    {
+      "t": "2026-09-29T13:20:04+00:00",
+      "slug": "btc-updown-5m-1790688000",
+      "reason": "too_early"
     }
   ],
-  "ticks": 184,
+  "ticks": 194,
   "started_at": "2026-09-29T03:49:19+00:00",
-  "updated_at": "2026-09-29T12:16:57+00:00",
+  "updated_at": "2026-09-29T13:20:04+00:00",
   "strategy": "conservative",
   "notes": "v3 conservative on $1000."
 }
