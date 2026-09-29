@@ -24,46 +24,6 @@
   ],
   "skips": [
     {
-      "t": "2026-09-29T21:22:16+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_134s"
-    },
-    {
-      "t": "2026-09-29T21:22:31+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_148s"
-    },
-    {
-      "t": "2026-09-29T21:22:46+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_163s"
-    },
-    {
-      "t": "2026-09-29T21:23:00+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_177s"
-    },
-    {
-      "t": "2026-09-29T21:23:15+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_192s"
-    },
-    {
-      "t": "2026-09-29T21:23:29+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_207s"
-    },
-    {
-      "t": "2026-09-29T22:12:20+00:00",
-      "slug": "btc-updown-5m-1790719800",
-      "reason": "too_late_138s"
-    },
-    {
-      "t": "2026-09-29T22:12:33+00:00",
-      "slug": "btc-updown-5m-1790719800",
-      "reason": "too_late_150s"
-    },
-    {
       "t": "2026-09-29T22:12:49+00:00",
       "slug": "btc-updown-5m-1790719800",
       "reason": "too_late_165s"
@@ -82,11 +42,51 @@
       "t": "2026-09-29T22:13:33+00:00",
       "slug": "btc-updown-5m-1790719800",
       "reason": "no_ask"
+    },
+    {
+      "t": "2026-09-29T23:12:14+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "too_late_134s"
+    },
+    {
+      "t": "2026-09-29T23:12:27+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "too_late_146s"
+    },
+    {
+      "t": "2026-09-29T23:12:39+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "too_late_158s"
+    },
+    {
+      "t": "2026-09-29T23:12:51+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "too_late_170s"
+    },
+    {
+      "t": "2026-09-29T23:13:03+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "too_late_182s"
+    },
+    {
+      "t": "2026-09-29T23:13:15+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "too_late_194s"
+    },
+    {
+      "t": "2026-09-29T23:13:27+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "too_late_206s"
+    },
+    {
+      "t": "2026-09-29T23:13:39+00:00",
+      "slug": "btc-updown-5m-1790723400",
+      "reason": "no_ask"
     }
   ],
-  "ticks": 309,
+  "ticks": 323,
   "started_at": "2026-09-29T03:49:19+00:00",
-  "updated_at": "2026-09-29T22:14:02+00:00",
+  "updated_at": "2026-09-29T23:14:51+00:00",
   "strategy": "conservative",
   "notes": "v3 conservative on $1000."
 }
