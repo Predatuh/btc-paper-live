@@ -24,36 +24,6 @@
   ],
   "skips": [
     {
-      "t": "2026-09-29T20:31:42+00:00",
-      "slug": "btc-updown-5m-1790713800",
-      "reason": "too_late_99s"
-    },
-    {
-      "t": "2026-09-29T20:31:56+00:00",
-      "slug": "btc-updown-5m-1790713800",
-      "reason": "too_late_113s"
-    },
-    {
-      "t": "2026-09-29T21:21:05+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "thin_move_-2.4bp"
-    },
-    {
-      "t": "2026-09-29T21:21:17+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "thin_move_-2.7bp"
-    },
-    {
-      "t": "2026-09-29T21:21:47+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_104s"
-    },
-    {
-      "t": "2026-09-29T21:22:02+00:00",
-      "slug": "btc-updown-5m-1790716800",
-      "reason": "too_late_119s"
-    },
-    {
       "t": "2026-09-29T21:22:16+00:00",
       "slug": "btc-updown-5m-1790716800",
       "reason": "too_late_134s"
@@ -82,11 +52,41 @@
       "t": "2026-09-29T21:23:29+00:00",
       "slug": "btc-updown-5m-1790716800",
       "reason": "too_late_207s"
+    },
+    {
+      "t": "2026-09-29T22:12:20+00:00",
+      "slug": "btc-updown-5m-1790719800",
+      "reason": "too_late_138s"
+    },
+    {
+      "t": "2026-09-29T22:12:33+00:00",
+      "slug": "btc-updown-5m-1790719800",
+      "reason": "too_late_150s"
+    },
+    {
+      "t": "2026-09-29T22:12:49+00:00",
+      "slug": "btc-updown-5m-1790719800",
+      "reason": "too_late_165s"
+    },
+    {
+      "t": "2026-09-29T22:13:04+00:00",
+      "slug": "btc-updown-5m-1790719800",
+      "reason": "too_late_181s"
+    },
+    {
+      "t": "2026-09-29T22:13:18+00:00",
+      "slug": "btc-updown-5m-1790719800",
+      "reason": "too_late_195s"
+    },
+    {
+      "t": "2026-09-29T22:13:33+00:00",
+      "slug": "btc-updown-5m-1790719800",
+      "reason": "no_ask"
     }
   ],
-  "ticks": 301,
+  "ticks": 309,
   "started_at": "2026-09-29T03:49:19+00:00",
-  "updated_at": "2026-09-29T21:23:30+00:00",
+  "updated_at": "2026-09-29T22:14:02+00:00",
   "strategy": "conservative",
   "notes": "v3 conservative on $1000."
 }
