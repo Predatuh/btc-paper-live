@@ -97,7 +97,8 @@
       fill("a", a.status === "fulfilled" ? a.value : null);
       const cons = c.status === "fulfilled" ? c.value : {};
       const agg = a.status === "fulfilled" ? a.value : {};
-      document.getElementById("stamp").textContent = "book " + String(cons.updated_at || agg.updated_at || "").replace("T"," ").replace("+00:00","Z");
+      const ts = cons.updated_at || agg.updated_at || "";
+      document.getElementById("stamp").textContent = "book " + String(ts).replace("T"," ").replace("+00:00","Z");
     }
     async function live() {
       const start = Math.floor(Date.now() / 1000 / 300) * 300;

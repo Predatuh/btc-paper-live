@@ -1,92 +1,16 @@
 {
-  "bankroll": 95.649534,
+  "bankroll": 95.80895,
   "starting_bankroll": 100.0,
   "peak": 100.0,
-  "max_dd": 0.04350465999999997,
+  "max_dd": 0.04350466,
   "open_position": null,
   "trades": [
-    {
-      "closed_at": "2026-09-28T21:18:41+00:00",
-      "slug": "btc-updown-5m-1790629200",
-      "kind": "directional",
-      "side": "UP",
-      "winner": "DOWN",
-      "open_spot": 83501.48,
-      "close_spot": 83464.36,
-      "entry_ask": 0.5,
-      "cost": 4.350466,
-      "payout": 0.0,
-      "pnl": -4.350466,
-      "bankroll": 95.649534,
-      "p_model": 0.5768,
-      "reason": "window_expired_coinbase"
-    }
+    {"closed_at": "2026-09-28T21:18:41+00:00", "side": "UP", "winner": "DOWN", "entry_ask": 0.5, "pnl": -4.350466, "bankroll": 95.649534},
+    {"closed_at": "2026-09-28T22:25:10+00:00", "side": "BOTH", "winner": "DOWN", "entry_ask": 0.98, "pnl": 0.0, "bankroll": 95.649534},
+    {"closed_at": "2026-09-29T01:00:28+00:00", "side": "BOTH", "winner": "DOWN", "entry_ask": 0.96, "pnl": 0.159416, "bankroll": 95.80895}
   ],
-  "skips": [
-    {
-      "t": "2026-09-28T20:51:07+00:00",
-      "slug": "btc-updown-5m-1790628600",
-      "reason": "thin_move_-4.8bp"
-    },
-    {
-      "t": "2026-09-28T20:51:20+00:00",
-      "slug": "btc-updown-5m-1790628600",
-      "reason": "thin_move_-4.2bp"
-    },
-    {
-      "t": "2026-09-28T20:51:33+00:00",
-      "slug": "btc-updown-5m-1790628600",
-      "reason": "thin_move_-3.8bp"
-    },
-    {
-      "t": "2026-09-28T20:51:46+00:00",
-      "slug": "btc-updown-5m-1790628600",
-      "reason": "thin_move_-4.0bp"
-    },
-    {
-      "t": "2026-09-28T20:51:59+00:00",
-      "slug": "btc-updown-5m-1790628600",
-      "reason": "thin_move_-0.8bp"
-    },
-    {
-      "t": "2026-09-28T20:57:35+00:00",
-      "slug": "btc-updown-5m-1790628900",
-      "reason": "ask_out_of_band_0.98"
-    },
-    {
-      "t": "2026-09-28T20:57:48+00:00",
-      "slug": "btc-updown-5m-1790628900",
-      "reason": "too_late_168s"
-    },
-    {
-      "t": "2026-09-28T20:58:01+00:00",
-      "slug": "btc-updown-5m-1790628900",
-      "reason": "too_late_181s"
-    },
-    {
-      "t": "2026-09-28T20:58:14+00:00",
-      "slug": "btc-updown-5m-1790628900",
-      "reason": "too_late_194s"
-    },
-    {
-      "t": "2026-09-28T20:58:27+00:00",
-      "slug": "btc-updown-5m-1790628900",
-      "reason": "too_late_207s"
-    },
-    {
-      "t": "2026-09-28T20:58:40+00:00",
-      "slug": "btc-updown-5m-1790628900",
-      "reason": "no_ask"
-    },
-    {
-      "t": "2026-09-28T21:18:41+00:00",
-      "slug": "btc-updown-5m-1790630100",
-      "reason": "no_ask"
-    }
-  ],
-  "ticks": 82,
-  "started_at": "2026-09-28T20:19:23+00:00",
-  "updated_at": "2026-09-28T21:18:41+00:00",
-  "strategy": "aggressive",
-  "notes": "Wider: p>=0.54, 5bp, first 160s, 34-66c, first-tick open ok."
+  "skips": [{"t": "2026-09-29T02:03:57+00:00", "reason": "no_ask"}],
+  "ticks": 403,
+  "updated_at": "2026-09-29T02:04:35+00:00",
+  "strategy": "aggressive"
 }
