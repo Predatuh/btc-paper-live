@@ -1,0 +1,20 @@
+{
+  "bankroll": 1000.0,
+  "starting_bankroll": 1000.0,
+  "peak": 1000.0,
+  "max_dd": 0.0,
+  "open_position": null,
+  "trades": [],
+  "skips": [
+    {
+      "t": "2026-09-29T03:49:22+00:00",
+      "slug": "btc-updown-5m-1790653500",
+      "reason": "too_late_262s"
+    }
+  ],
+  "ticks": 1,
+  "started_at": "2026-09-29T03:49:21+00:00",
+  "updated_at": "2026-09-29T03:49:23+00:00",
+  "strategy": "c_plus",
+  "notes": "Looser conservative: p>=0.58, 8bp, z>=0.70."
+}

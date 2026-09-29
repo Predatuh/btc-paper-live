@@ -7,14 +7,14 @@
   "trades": [],
   "skips": [
     {
-      "t": "2026-09-29T03:49:25+00:00",
+      "t": "2026-09-29T03:49:30+00:00",
       "slug": "btc-updown-5m-1790653500",
       "reason": "no_ask"
     }
   ],
   "ticks": 1,
-  "started_at": "2026-09-29T03:49:24+00:00",
-  "updated_at": "2026-09-29T03:49:25+00:00",
-  "strategy": "aggressive",
-  "notes": "Aggressive $1000: p>=0.56, 7bp, z>=0.60."
+  "started_at": "2026-09-29T03:49:29+00:00",
+  "updated_at": "2026-09-29T03:49:30+00:00",
+  "strategy": "spray",
+  "notes": "Fires often: p>=0.51, 1.5bp, almost whole candle. Expect more losers."
 }
